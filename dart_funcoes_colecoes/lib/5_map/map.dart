@@ -1,35 +1,6 @@
 import 'dart:math';
 
 void main() {
-  var people = <String, int>{};
-  List<String> names = [
-    "Alice",
-    "Bob",
-    "Charlie",
-    "David",
-    "Eva",
-    "Frank",
-    "Grace",
-    "Henry",
-    "Isabella",
-    "Jack",
-    "Kate",
-    "Liam",
-    "Mia",
-    "Nathan",
-    "Olivia",
-    "Peter",
-    "Quinn",
-    "Ryan",
-    "Samantha",
-    "Thomas",
-    "Uma",
-    "Violet",
-    "William",
-    "Xander",
-    "Yara",
-    "Zoe"
-  ];
 //CRIANDO UM MAP USANDO LAÇO E PASSANDO AS IDADES AUTOMATICAS
   /* Random random = Random();
 
@@ -83,4 +54,52 @@ void main() {
 // .containsKey()/.containsValue() - Retorna um bool para a existencia de uma chave/valor
   print(newPeople.containsKey('Thomas')); //true
   print(newPeople.containsKey(80)); //false
+
+// .putIfAbsent() - Adciona uma chave-valor ao Map()
+  newPeople.putIfAbsent('Caique', () => 26);
+  print(newPeople);
+
+// .remove() - Remove uma chave-valor
+  newPeople.remove('Caique');
+  print(newPeople);
+
+// .update() - Atualiza um valor de uma chave
+  newPeople.update('Zoe', (value) => value + 10);
+  print(newPeople);
+
+//.fromIterable() - Converte um Iterable em Map()
+  print('\nConvertendo um Iterable em Map');
+  Iterable<String> names = [
+    "Alice",
+    "Bob",
+    "Charlie",
+    "David",
+    "Eva",
+    "Frank",
+    "Grace",
+    "Henry",
+    "Isabella",
+    "Jack",
+    "Kate",
+    "Liam",
+    "Mia",
+    "Nathan",
+    "Olivia",
+    "Peter",
+    "Quinn",
+    "Ryan",
+    "Samantha",
+    "Thomas",
+    "Uma",
+    "Violet",
+    "William",
+    "Xander",
+    "Yara",
+    "Zoe"
+  ];
+  var newPeople2 = Map.fromIterable(
+    names,
+    value: (element) => Random().nextInt(names.length) + 14,
+  );
+  print(newPeople2);
 }
