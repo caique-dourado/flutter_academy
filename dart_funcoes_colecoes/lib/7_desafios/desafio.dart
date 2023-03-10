@@ -92,7 +92,16 @@ void main() {
   }
 
   //! 4 - Encontre a pessoa mais velha e apresente o nome dela.
-  void maisVelha({required List<List<String>> listaPessoas}) {}
+  void maisVelha({required List<List<String>> listaPessoas}) {
+    int idadePessoa = 0;
+    String nomePessoa = '';
+    for (var i = 0; i < listaPessoas.length; i++) {
+      if (int.parse(listaPessoas[i][1]) > idadePessoa) {
+        nomePessoa = listaPessoas[i][0];
+      }
+    }
+    print(nomePessoa);
+  }
 
   print('\nPESSOA MAIS VELHA: ');
   maisVelha(listaPessoas: novaPessoas);
