@@ -140,6 +140,7 @@ void main() {
   print(contaNomes(nomes));
 
 //* 5. Crie uma função que receba uma lista de mapas, onde cada mapa representa um produto com os campos "nome", "preço" e "quantidade", e retorne o produto mais caro da lista.
+  print('\nPRODUTO COM MAIOR PREÇO: ');
   String maiorPreco(List<Map<String, String>> produtos) {
     var produtoEncontrado = '';
     var preco = 0.0;
@@ -168,8 +169,40 @@ void main() {
 
   print(somaDigitos(numeros));
 //* 7. Crie uma função que receba uma lista de números e retorne uma nova lista contendo as diferenças entre cada par de elementos consecutivos da lista original.
+
+  List<int> numeros2 = [
+    80,
+    33,
+    7,
+    100,
+    264,
+    135,
+    95,
+    90,
+    32,
+    15,
+  ];
+  diferenca(List<int> numeros) {
+    var novaLista = [];
+
+    for (int i = 0; i < numeros.length - 1; i++) {
+      int diff = (numeros[i + 1] - numeros[i]);
+      novaLista.add(diff);
+    }
+    return novaLista;
+  }
+
+  print(diferenca(numeros2));
 //* 8. Crie uma função que receba uma lista de strings e retorne uma nova lista contendo as strings em ordem alfabética, ignorando as letras maiúsculas e minúsculas.
+  organizaNomes(List<String> nomes) {
+    var novaLista = nomes.toSet().toList();
+    novaLista.sort();
+    return novaLista;
+  }
+
+  print(organizaNomes(nomes));
 //* 9. Crie uma função que receba uma lista de inteiros e retorne a soma dos fatores primos de todos os números da lista.
+
 //* 10. Crie uma função que receba uma lista de mapas, onde cada mapa representa uma pessoa com os campos "nome", "idade" e "altura", e retorne a média de idade das pessoas com altura superior a 1,80 metros.
 }
 
